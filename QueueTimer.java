@@ -1,7 +1,12 @@
-public class QueueTimer{
+import java.util.*;
+import java.lang.*;
+
+public class QueueTimer extends CollectionTimer {
+
+  private  Queue<Integer> queue;
 
   // Adds an Integer object to the queue.
-  public void addElement(java.lang.Integer elem){
+  public void addElement(Integer elem){
 
   }
 
