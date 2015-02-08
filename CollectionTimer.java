@@ -39,7 +39,7 @@ public abstract class CollectionTimer extends java.lang.Object {
 	//Inserts a specified number of Integer objects into the data structure
 	public void insert(int amount){
 		for(int i=0; i<amount; i++){
-			addElem(ElemGen.nextInt());
+			addElement(elemGen.nextInt());
 		}
 
 	}
@@ -74,10 +74,11 @@ public abstract class CollectionTimer extends java.lang.Object {
 	public long time(int[] mutations){
 		long start = System.currentTimeMillis();
 		for(int i=0; i<mutations.length; i ++) {
-			if(mutations > 0){
-				insert(mutations);
+			int mutation = mutations[i];
+			if(mutation > 0){
+				insert(mutation);
 			} else {
-				extract(mutations*-1);
+				extract(mutation*-1);
 			}
 		}
 		long stop = System.currentTimeMillis();
